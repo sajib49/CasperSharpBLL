@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 using CS.Model;
 using CS.Data;
 using CS.Data.Interfaces;
@@ -18,7 +21,7 @@ namespace CS.Web.Controllers
     public class UsersController : Controller
     {
         private readonly IUserRepository _userRepository = new UserRepository();
-
+        private  byte[] _contentBytes;
         public ActionResult LogIn()
         {
             return View();
@@ -57,6 +60,21 @@ namespace CS.Web.Controllers
 
             return View();
         }
+        public ActionResult ExportCustomers()
+        {
+            ReportDocument rd = new ReportDocument();
+            rd.Load(Path.Combine(Server.MapPath("~/Reports"), "TestRepot.rpt"));
 
+            Response.Buffer = false;
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Stream stream = rd.ExportToStream(ExportFormatType.PortableDocFormat);
+            stream.Seek(0, SeekOrigin.Begin);
+            return File(stream, "application/pdf", "test.pdf");
+
+
+        }
+
+ 
     }
 }
