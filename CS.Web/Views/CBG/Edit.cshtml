@@ -1,0 +1,111 @@
+﻿@model CS.Model.CustomerBankGuarantee
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>CustomerBankGuarantee</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.TranId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerId, "Customer", new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.DropDownList("CustomerId", null, "--Select Customer--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CustomerId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BgAmount, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.BgAmount, new { required = "", @class = "form-control", autocomplete = "off", placeholder = "Bg Amount" })
+                @Html.ValidationMessageFor(model => model.BgAmount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OpeningDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <div class='input-group date' data-provide="datepicker" id='datepicker1'>
+                    @Html.TextBoxFor(model => model.OpeningDate, new { @Value = @Model.ExpiryDate.ToString("dd-MMM-yyyy"), required = "", @class = "form-control", autocomplete = "off", placeholder = "dd-mm-yyyy" })
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar">
+                        </span>
+                    </span>
+                </div>
+                @Html.ValidationMessageFor(model => model.OpeningDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExpiryDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <div class='input-group date' data-provide="datepicker" id='datepicker2'>
+                    @Html.TextBoxFor(model => model.ExpiryDate, new { @Value = @Model.ExpiryDate.ToString("dd-MMM-yyyy"), required = "", @class = "form-control", autocomplete = "off", placeholder = "dd-mm-yyyy" })
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar">
+                        </span>
+                    </span>
+                </div>
+
+                @*@Html.TextBoxFor(model => model.ExpiryDate, new {required = "", @class = "form-control", autocomplete = "off", placeholder = "Expiry Date"})*@
+                @Html.ValidationMessageFor(model => model.ExpiryDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsActive, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.IsActive)
+                @Html.CheckBox("chkIsActive")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-success"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <a href="@Url.Action("Index", "Cbg")" class="btn btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> Back to List
+    </a>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    $(document).ready(function () {
+        $('#datepicker1').datepicker({
+            format: 'dd-M-yyyy',
+            orientation: 'bottom auto'
+        });
+        $('#datepicker2').datepicker({
+            format: 'dd-M-yyyy',
+            orientation: 'bottom auto'
+        });
+        $('#chkIsActive').change(function () {
+            if ($(this).is(":checked")) {
+                $('#IsActive').val("1");
+            } else {
+                $('#IsActive').val("0");
+            }
+        });
+    });
+</script>
+
+}

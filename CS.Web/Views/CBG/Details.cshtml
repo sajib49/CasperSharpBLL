@@ -1,0 +1,63 @@
+﻿@model CS.Model.CustomerBankGuarantee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer Bank Guarantee</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cutomer.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cutomer.CustomerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BgAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BgAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpeningDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpiryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpiryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd>
+
+            @(Model.IsActive == 1 ? Html.Label("Active") : Html.Label("Inctive"))
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Index", "Cbg")" class="btn btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> Back to List
+    </a>
+    |
+    <a href="@Url.Action("Edit", "Cbg", new { id = Model.TranId })" class="btn btn-warning">
+        <span class="glyphicon glyphicon-edit"></span> Edit
+    </a>
+</p>

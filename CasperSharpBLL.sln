@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Model", "CS.Model\CS.Model.csproj", "{7EFBB158-8E75-4A5B-AF7D-15D2DCECC6CD}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{656E563C-2FB5-4C09-9987-C04B14EF44DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Web", "CS.Web\CS.Web.csproj", "{7E54CF76-B7EA-47D7-B548-523E19E3BE88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Report", "CS.Report\CS.Report.csproj", "{588BCF2F-118D-4396-985E-0DFF4FEAB96E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,13 +33,18 @@ Global
 		{7E54CF76-B7EA-47D7-B548-523E19E3BE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E54CF76-B7EA-47D7-B548-523E19E3BE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E54CF76-B7EA-47D7-B548-523E19E3BE88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588BCF2F-118D-4396-985E-0DFF4FEAB96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588BCF2F-118D-4396-985E-0DFF4FEAB96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588BCF2F-118D-4396-985E-0DFF4FEAB96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588BCF2F-118D-4396-985E-0DFF4FEAB96E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{7EFBB158-8E75-4A5B-AF7D-15D2DCECC6CD} = {1969938B-9738-4618-BA05-43CB9ABBDD90}
 		{70852093-9887-4029-AFF6-CF2BE21171C9} = {1969938B-9738-4618-BA05-43CB9ABBDD90}
+		{7EFBB158-8E75-4A5B-AF7D-15D2DCECC6CD} = {1969938B-9738-4618-BA05-43CB9ABBDD90}
+		{588BCF2F-118D-4396-985E-0DFF4FEAB96E} = {1969938B-9738-4618-BA05-43CB9ABBDD90}
 		{7E54CF76-B7EA-47D7-B548-523E19E3BE88} = {656E563C-2FB5-4C09-9987-C04B14EF44DD}
 	EndGlobalSection
 EndGlobal

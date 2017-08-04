@@ -18,140 +18,45 @@ namespace CS.Web.Controllers
     public class UsersController : Controller
     {
         private readonly IUserRepository _userRepository = new UserRepository();
-        //public UsersController(IUserRepository userRepository)
-        //{
-        //    _userRepository = userRepository;
-        //}
-        private BllDbContext db = new BllDbContext();
 
-        // GET: Users
-        public ActionResult Index()
+        public ActionResult LogIn()
         {
-            List<User> userList = new List<User>()
-            {
-                new User()
-                {
-                    EmployeeId = 1,
-                    Password = "123",
-                    Salt = "545545",
-                    UserFullName = "SPP",
-                    UserId = 45,
-                    UserName = "Sfi",
-                    UserSbUs = "2"
+            return View();
+        }
 
-                },
-                 new User()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogIn([Bind(Include = "UserName,Password")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                if (ModelState.IsValid)
                 {
-                    EmployeeId = 3,
-                    Password = "wqpodj",
-                    Salt = "wklahnclke",
-                    UserFullName = "lqwkhadn",
-                    UserId = 989,
-                    UserName = "lxwkqhdnpe",
-                    UserSbUs = "2cwqodj"
+                    var loggedUser = _userRepository.Find(x => x.UserName.ToLower() == user.UserName.Trim().ToLower());
+                    if (loggedUser != null)
+                    {
+                        PdsaHash mph2 = new PdsaHash(PdsaHash.PdsaHashType.MD5);
+                        string pass = mph2.CreateHash(user.Password, loggedUser.Salt);
+                        if (pass != loggedUser.Password)
+                        {
+                            ModelState.AddModelError("LoginFaild", "The User Name or Password is Incorrect");
+                            return View();
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("LoginFaild", "The User Name or Password is Incorrect");
+                        return View();
+                    }
+                    Session["LoggedUser"] = loggedUser;
+                    return RedirectToAction("Index", "Cbg");
                 }
+                ModelState.AddModelError("LoginFaild", "Please Provide User Name & Password");
+                return View();
+            }
 
-            };
             return View();
         }
 
-        // GET: Users/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserName,Password")] User user)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Users.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(user);
-        }
-
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,UserFullName,UserName,Password,Salt,UserSbUs,EmployeeId")] User user)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(user);
-        }
-
-
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
-
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

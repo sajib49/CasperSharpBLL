@@ -1,13 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@using CS.Model
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome.css" rel="stylesheet" />
+
 </head>
-<body>
+<body style="background-color: #46BFE7; ">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -16,14 +21,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("BLL", "Index", "Cbg", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Cbg")</li>
+                    <li>@Html.ActionLink("Customer ROI", "Index", "CustRoi")</li>
+                    <li>@*@Html.ActionLink("Contact", "Contact", "Home")*@</li>
                 </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> </span><b> @{ var user = Session["LoggedUser"] as User;}@user.UserName</b> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><b><span class="glyphicon glyphicon-lock"></span> Lock Screen</b></a></li>
+                            <li><a href="#"><b><span class="glyphicon glyphicon-edit"></span> Change Password</b></a></li>
+                            <li><a href="@Url.Action("LogOut","User")"><b><span class="glyphicon glyphicon-log-out"></span> Logout </b></a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+
             </div>
         </div>
     </div>
@@ -31,12 +49,14 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - MIS & IT Department</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

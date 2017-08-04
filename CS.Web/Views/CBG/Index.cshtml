@@ -1,0 +1,91 @@
+﻿@model IEnumerable<CS.Model.CustomerBankGuarantee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a id ="btnGetAll" href="@Url.Action("Create","Cbg")" class="btn btn-success">
+        <i id="icon" class="glyphicon glyphicon-plus"></i> Add
+    </a>
+</p>
+
+<table id="example" class="table-hover table-bordered table-responsive">
+    <thead>
+    <tr style="background-color: #A5D950; ">
+        <th>
+            @Html.DisplayNameFor(model => model.Cutomer.CustomerCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cutomer.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BgAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpeningDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpiryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.Label("Activity")
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="text-align: center;">
+                    @Html.DisplayFor(modelItem => item.Cutomer.CustomerCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cutomer.CustomerName)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.BgAmount)
+                </td>
+                <td style="text-align: center;">
+                    @Html.DisplayFor(modelItem => item.OpeningDate)
+                </td>
+                <td style="text-align: center;">
+                    @Html.DisplayFor(modelItem => item.ExpiryDate)
+                </td>
+                <td style="text-align: center;">
+                    @(item.IsActive == 0 ? Html.Label("Inactive") : Html.Label("Active"))
+                </td>
+                <td style="text-align: center;">
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.TranId }) |*@
+                    @*@Html.ActionLink("Details", "Details", new { id = item.TranId })*@
+                    @*@Html.ActionLink("Delete", "Delete", new { id=item.TranId })*@
+                    <a href="@Url.Action("Edit", "Cbg", new {id = item.TranId})">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>|
+                    <a href="@Url.Action("Details", "Cbg", new {id = item.TranId})">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+@section scripts
+{
+
+    <script>
+        $(document).ready(function() {
+            $('#example').dataTable({
+            });
+            $("#btnGetAll").click(function () {
+                $("#icon").addClass("fa fa-spinner fa-spin");
+            });
+        });
+    </script>
+}
