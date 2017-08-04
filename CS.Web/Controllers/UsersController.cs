@@ -11,6 +11,7 @@ using CS.Model;
 using CS.Data;
 using CS.Data.Interfaces;
 using CS.Data.Repositories;
+using WebGrease.Css.Extensions;
 
 namespace CS.Web.Controllers
 {
@@ -26,7 +27,32 @@ namespace CS.Web.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            return View(_userRepository.GetUserDetails(23));
+            List<User> userList = new List<User>()
+            {
+                new User()
+                {
+                    EmployeeId = 1,
+                    Password = "123",
+                    Salt = "545545",
+                    UserFullName = "SPP",
+                    UserId = 45,
+                    UserName = "Sfi",
+                    UserSbUs = "2"
+
+                },
+                 new User()
+                {
+                    EmployeeId = 3,
+                    Password = "wqpodj",
+                    Salt = "wklahnclke",
+                    UserFullName = "lqwkhadn",
+                    UserId = 989,
+                    UserName = "lxwkqhdnpe",
+                    UserSbUs = "2cwqodj"
+                }
+
+            };
+            return View();
         }
 
         // GET: Users/Details/5
@@ -50,7 +76,7 @@ namespace CS.Web.Controllers
             return View();
         }
 
-       
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "UserName,Password")] User user)
@@ -79,7 +105,7 @@ namespace CS.Web.Controllers
             return View(user);
         }
 
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "UserId,UserFullName,UserName,Password,Salt,UserSbUs,EmployeeId")] User user)

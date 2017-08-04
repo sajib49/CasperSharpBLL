@@ -12,6 +12,7 @@ namespace CS.Model
     {
         [Key]
         [ScaffoldColumn(false)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserId { get; set; }
          [ScaffoldColumn(false)]
         public string UserFullName { get; set; }

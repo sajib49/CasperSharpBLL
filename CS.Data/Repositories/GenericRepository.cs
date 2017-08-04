@@ -63,8 +63,17 @@ namespace CS.Data.Repositories
         public virtual void Delete(Expression<Func<TEntity, bool>> predicate)
         {
             _dbSet.RemoveRange(_dbSet.Where(predicate));
+            
         }
 
+        public virtual void AddRange(IEnumerable<TEntity> listEntities )
+        {
+            _dbSet.AddRange(listEntities);
+        }
+        public virtual void RemoveRange(IEnumerable<TEntity> listEntities)
+        {
+            _dbSet.RemoveRange(listEntities);
+        }
         public virtual void Save()
         {
             DbContext.SaveChanges();

@@ -8,3 +8,13 @@ D:\Program Files\Transcom Electronics Limited\CasperSharpBLL\CS.Model\bin\Debug\
 D:\Program Files\Transcom Electronics Limited\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.dll
 D:\Program Files\Transcom Electronics Limited\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.SqlServer.dll
 D:\Program Files\Transcom Electronics Limited\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\bin\Debug\CS.Model.dll.config
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\bin\Debug\CS.Model.dll
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\bin\Debug\CS.Model.pdb
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.dll
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.xml
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.csprojResolveAssemblyReference.cache
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.dll
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.pdb

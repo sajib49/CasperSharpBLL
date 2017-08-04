@@ -17,6 +17,8 @@ namespace CS.Data.Interfaces
         void Delete(object id);
         void Delete(TEntity entityToDelete);
         void Delete(Expression<Func<TEntity, bool>> predicate);
+        void AddRange(IEnumerable<TEntity> listEntities);
+        void RemoveRange(IEnumerable<TEntity> listEntities);
         void Save();
     }
 }
