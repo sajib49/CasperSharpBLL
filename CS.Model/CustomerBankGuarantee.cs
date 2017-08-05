@@ -15,7 +15,7 @@ namespace CS.Model
         public int CustomerId { get; set; }
         [Required(ErrorMessage = "Please Enter Bg Amount")]
         [Display(Name = "Bg Amount")]
-        [Range(0, double.MaxValue, ErrorMessage = "Please Enter Valid BG Amount")]
+        [Range(0, double.MaxValue, ErrorMessage = "Please Enter Valid Bg Amount")]
         [DisplayFormat(DataFormatString = "{0:N0}")]
         public double BgAmount { get; set; }
         [Required(ErrorMessage = "Please Enter Opening Date")]

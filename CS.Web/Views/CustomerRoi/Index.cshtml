@@ -1,0 +1,178 @@
+﻿@model IEnumerable<CS.Model.CustomerRoi>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a id="btnGetAll" href="@Url.Action("Create", "CustomerRoi")" class="btn btn-success">
+        <i id="icon" class="glyphicon glyphicon-plus"></i> Add
+    </a>
+</p>
+<table id="example" class="table-hover table-bordered table-responsive">
+    <thead>
+        <tr style="background-color: #A5D950; ">
+            <th>
+                @Html.DisplayNameFor(model => model.Cutomer.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommisionInc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KpiInc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollectionInc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleSubsidiary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OthersInc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgrSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SaSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RaSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DriverSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OthersExp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleExp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeRent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maintenance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockInc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditToMkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PromRepInc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bg)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="text-align: left;">
+                    @Html.DisplayFor(modelItem => item.Cutomer.CustomerName)
+                </td>
+                <td style="text-align: center;">
+                    @Html.DisplayFor(modelItem => item.LastUpdateDate)
+                </td>
+                <td style="text-align: center;">
+                    @Html.DisplayFor(modelItem => item.ExpMonth)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.CommisionInc)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.KpiInc)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.CollectionInc)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.VehicleSubsidiary)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.OthersInc)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.MgrSalary)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.SaSalary)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.RaSalary)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.DriverSalary)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.OthersExp)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.VehicleExp)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.OfficeRent)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.Maintenance)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.StockInc)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.CreditToMkt)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.PromRepInc)
+                </td>
+                <td style="text-align: right;">
+                    @Html.DisplayFor(modelItem => item.Bg)
+                </td>
+                @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TranId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TranId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TranId })
+                </td>*@
+                <td style="text-align: center;">
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.TranId }) |*@
+                    @*@Html.ActionLink("Details", "Details", new { id = item.TranId })*@
+                    @*@Html.ActionLink("Delete", "Delete", new { id=item.TranId })*@
+                    <a href="@Url.Action("Edit", "CustomerRoi", new {id = item.TranId})">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>|
+                    <a href="@Url.Action("Details", "CustomerRoi", new { id = item.TranId })">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts
+{
+
+    <script>
+        $(document).ready(function () {
+            $('#example').dataTable({
+            });
+            $("#btnGetAll").click(function () {
+                $("#icon").addClass("fa fa-spinner fa-spin");
+            });
+        });
+    </script>
+}
+

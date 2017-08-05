@@ -1,0 +1,367 @@
+﻿@model CS.Model.CustomerRoi
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+
+        <h4>CustomerRoi</h4>
+        <hr/>
+        @Html.ValidationSummary(true)
+        
+        <div class="container">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerId, "Customer Name", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("CustomerId", null, "--Select Customer Name--", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CustomerId)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastUpdateDate, "Last Update Date", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class='input-group date' data-provide="datepicker" id='datepicker1'>
+                            @Html.TextBoxFor(model => model.LastUpdateDate, new { required = "", @class = "form-control", autocomplete = "off", placeholder = "dd-mm-yyyy" })
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar">
+                                </span>
+                            </span>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.LastUpdateDate)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ExpMonth, "Expense Date", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class='input-group date' data-provide="datepicker" id='datepicker2'>
+                            @Html.TextBoxFor(model => model.ExpMonth, new { required = "", @class = "form-control", autocomplete = "off", placeholder = "dd-mm-yyyy" })
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar">
+                                </span>
+                            </span>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.ExpMonth)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CommisionInc, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.CommisionInc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CommisionInc)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.KpiInc, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.KpiInc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.KpiInc)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CollectionInc, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.CollectionInc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CollectionInc)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.VehicleSubsidiary, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.VehicleSubsidiary, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.VehicleSubsidiary)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OthersInc, new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.OthersInc, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.OthersInc)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Total Income")
+                    <div class="col-md-10">
+                        <input type="text" id="txtTotalIncome" class="form-control" readonly />
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MgrSalary, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.MgrSalary, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MgrSalary)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SaSalary, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.SaSalary, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SaSalary)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RaSalary, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.RaSalary, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.RaSalary)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DriverSalary, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.DriverSalary, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.DriverSalary)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OthersExp, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.OthersExp, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.OthersExp)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.VehicleExp, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.VehicleExp, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.VehicleExp)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OfficeRent, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.OfficeRent, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.OfficeRent)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Maintenance, new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Maintenance, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.Maintenance)
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("Total Expense")
+                    <div class="col-md-10">
+                        <input type="text" id="txtExpense" class="form-control" readonly />
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StockInc, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.StockInc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.StockInc)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CreditToMkt, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.CreditToMkt, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CreditToMkt)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PromRepInc, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.PromRepInc, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.PromRepInc)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Bg, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Bg, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Bg)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Total ROI</label>
+           <div class="col-md-10">
+               <input readonly type="text" class="form-control" id="txtTotalRoi">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-success">
+                    <span class="glyphicon glyphicon-floppy-save"></span> Save
+                </button>
+               </div>
+        </div>
+
+
+    
+}
+
+<div>
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <a href="@Url.Action("Index", "CustomerRoi")" class="btn btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> Back to List
+    </a>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function() {
+            $('#datepicker1').datepicker({
+                format: 'dd-M-yyyy',
+                orientation: 'bottom auto'
+            });
+            $('#datepicker2').datepicker({
+                format: 'dd-M-yyyy',
+                orientation: 'bottom auto'
+            });
+
+            $('#chkIsActive').change(function() {
+                if ($(this).is(":checked")) {
+                    $('#IsActive').val("1");
+                } else {
+                    $('#IsActive').val("0");
+                }
+            });
+            $("#btnSave").click(function() {
+                $("#saveIcon").addClass("fa fa-spinner fa-spin");
+            });
+            var nTotalRoi = 0;
+            var nCommisionInc = 0;
+            var nKpiInc = 0;
+            var nCollectionInc = 0;
+            var nVehicleSubsidiary = 0;
+            var nOthersInc = 0;
+
+            var nMgrSalary = 0;
+            var nSaSalary = 0;
+            var nRaSalary = 0;
+            var nDriverSalary = 0;
+            var nOthersExp = 0;
+            var nVehicleExp = 0;
+            var nOfficeRent = 0;
+            var nMaintenance = 0;
+
+            var nTotalIncome = 0;
+            var nTotalExpense = 0;
+
+            function calculateTotalIncome() {
+                if ($("#CommisionInc").val() !== "") {
+                    nCommisionInc = parseInt($("#CommisionInc").val());
+                } else {
+                    nCommisionInc = 0;
+                }
+                if ($("#KpiInc").val() !== "") {
+                    nKpiInc = parseInt($("#KpiInc").val());
+                } else {
+                    nKpiInc = 0;
+                }
+                if ($("#CollectionInc").val() !== "") {
+                    nCollectionInc = parseInt($("#CollectionInc").val());
+                } else {
+                    nCollectionInc = 0;
+                }
+                if ($("#VehicleSubsidiary").val() !== "") {
+                    nVehicleSubsidiary = parseInt($("#VehicleSubsidiary").val());
+                } else {
+                    nVehicleSubsidiary = 0;
+                }
+                if ($("#OthersInc").val() !== "") {
+                    nOthersInc = parseInt($("#OthersInc").val());
+                } else {
+                    nOthersInc = 0;
+                }
+
+                if ($("#MgrSalary").val() !== "") {
+                    nMgrSalary = parseInt($("#MgrSalary").val());
+                } else {
+                    nMgrSalary = 0;
+                }
+                if ($("#SaSalary").val() !== "") {
+                    nSaSalary = parseInt($("#SaSalary").val());
+                } else {
+                    nSaSalary = 0;
+                }
+
+                if ($("#RaSalary").val() !== "") {
+                    nRaSalary = parseInt($("#RaSalary").val());
+                } else {
+                    nRaSalary = 0;
+                }
+              
+                if ($("#DriverSalary").val() !== "") {
+                    nDriverSalary = parseInt($("#DriverSalary").val());
+                } else {
+                    nDriverSalary = 0;
+                }
+                if ($("#OthersExp").val() !== "") {
+                    nOthersExp = parseInt($("#OthersExp").val());
+                } else {
+                    nOthersExp = 0;
+                }
+                if ($("#VehicleExp").val() !== "") {
+                    nVehicleExp = parseInt($("#VehicleExp").val());
+                } else {
+                    nVehicleExp = 0;
+                }
+                if ($("#OfficeRent").val() !== "") {
+                    nOfficeRent = parseInt($("#OfficeRent").val());
+                } else {
+                    nOfficeRent = 0;
+                }
+                if ($("#Maintenance").val() !== "") {
+                    nMaintenance = parseInt($("#Maintenance").val());
+                } else {
+                    nMaintenance = 0;
+                }
+
+                nTotalIncome = nCommisionInc + nKpiInc + nCollectionInc + nVehicleSubsidiary + nOthersInc;
+                nTotalExpense = nMgrSalary + nSaSalary + nRaSalary + nDriverSalary + nOthersExp + nVehicleExp + nOfficeRent + nMaintenance;
+                nTotalRoi = nTotalIncome - nTotalExpense;
+
+                $("#TotalIncome").val(nTotalIncome);
+                $("#TotalExpense").val(nTotalExpense);
+                $("#TotalRoi").val(nTotalRoi);
+                //return nTotalRoi = (nCommisionInc + nKpiInc + nCollectionInc + nVehicleSubsidiary + nOthersInc) - (nMgrSalary + nSaSalary + nRaSalary + nDriverSalary + nOthersExp + nVehicleExp + nOfficeRent + nMaintenance);
+            }
+
+            $("#CommisionInc,#KpiInc,#CollectionInc,#VehicleSubsidiary,#OthersInc,#MgrSalary,#SaSalary,#RaSalary,#DriverSalary,#OthersExp,#VehicleExp,#OfficeRent,#Maintenance").on('change keyup paste', function () {
+                calculateTotalIncome();
+            });
+
+        });
+
+    </script>
+
+}

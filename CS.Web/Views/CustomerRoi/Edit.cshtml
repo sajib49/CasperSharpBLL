@@ -1,0 +1,239 @@
+﻿@model CS.Model.CustomerRoi
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>CustomerRoi</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.TranId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerId, "Customer Name", new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.DropDownList("CustomerId", null, "--Select Customer Name--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CustomerId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastUpdateDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <div class='input-group date' data-provide="datepicker" id='datepicker1'>
+                    @Html.TextBoxFor(model => model.LastUpdateDate, new { @Value = @Model.LastUpdateDate.ToString("dd-MMM-yyyy"), required = "", @class = "form-control", autocomplete = "off", placeholder = "dd-mm-yyyy" })
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar">
+                        </span>
+                    </span>
+                </div>
+                @Html.ValidationMessageFor(model => model.LastUpdateDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExpMonth, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <div class='input-group date' data-provide="datepicker" id='datepicker2'>
+                    @Html.TextBoxFor(model => model.ExpMonth, new { @Value = @Model.ExpMonth.ToString("dd-MMM-yyyy"), required = "", @class = "form-control", autocomplete = "off", placeholder = "dd-mm-yyyy" })
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar">
+                        </span>
+                    </span>
+                </div>
+
+                @*@Html.TextBoxFor(model => model.ExpiryDate, new {required = "", @class = "form-control", autocomplete = "off", placeholder = "Expiry Date"})*@
+                @Html.ValidationMessageFor(model => model.ExpMonth)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CommisionInc, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CommisionInc)
+                @Html.ValidationMessageFor(model => model.CommisionInc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KpiInc, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KpiInc)
+                @Html.ValidationMessageFor(model => model.KpiInc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CollectionInc, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CollectionInc)
+                @Html.ValidationMessageFor(model => model.CollectionInc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VehicleSubsidiary, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VehicleSubsidiary)
+                @Html.ValidationMessageFor(model => model.VehicleSubsidiary)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OthersInc, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OthersInc)
+                @Html.ValidationMessageFor(model => model.OthersInc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MgrSalary, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MgrSalary)
+                @Html.ValidationMessageFor(model => model.MgrSalary)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SaSalary, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SaSalary)
+                @Html.ValidationMessageFor(model => model.SaSalary)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RaSalary, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RaSalary)
+                @Html.ValidationMessageFor(model => model.RaSalary)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DriverSalary, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DriverSalary)
+                @Html.ValidationMessageFor(model => model.DriverSalary)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OthersExp, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OthersExp)
+                @Html.ValidationMessageFor(model => model.OthersExp)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VehicleExp, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VehicleExp)
+                @Html.ValidationMessageFor(model => model.VehicleExp)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OfficeRent, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OfficeRent)
+                @Html.ValidationMessageFor(model => model.OfficeRent)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Maintenance, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Maintenance)
+                @Html.ValidationMessageFor(model => model.Maintenance)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StockInc, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StockInc)
+                @Html.ValidationMessageFor(model => model.StockInc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CreditToMkt, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CreditToMkt)
+                @Html.ValidationMessageFor(model => model.CreditToMkt)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PromRepInc, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PromRepInc)
+                @Html.ValidationMessageFor(model => model.PromRepInc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Bg, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Bg)
+                @Html.ValidationMessageFor(model => model.Bg)
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.IsCurrent, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IsCurrent)
+                @Html.ValidationMessageFor(model => model.IsCurrent)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <a href="@Url.Action("Index", "CustomerRoi")" class="btn btn-primary">
+        <span class="glyphicon glyphicon-arrow-left"></span> Back to List
+    </a>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $('#datepicker1').datepicker({
+                format: 'dd-M-yyyy',
+                orientation: 'bottom auto'
+            });
+            $('#datepicker2').datepicker({
+                format: 'dd-M-yyyy',
+                orientation: 'bottom auto'
+            });
+            $('#chkIsActive').change(function () {
+                if ($(this).is(":checked")) {
+                    $('#IsActive').val("1");
+                } else {
+                    $('#IsActive').val("0");
+                }
+            });
+        });
+    </script>
+}

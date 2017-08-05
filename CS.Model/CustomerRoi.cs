@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,9 +16,9 @@ namespace CS.Model
         public int CustomerId { get; set; }
 
         //[Required(ErrorMessage = "Please Enter Last Update Date")]
-        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MMM-yyyy}")]
-        //[DataType(DataType.Date)]
-        //[Display(Name = "Update Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MMM-yyyy}")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Update Date")]
         public DateTime LastUpdateDate { get; set; }
 
         
@@ -40,7 +37,7 @@ namespace CS.Model
         [Display(Name = "KPI Incentive")]
         [Range(0, double.MaxValue, ErrorMessage = "Please Enter Valid KPI Incentive")]
         [DisplayFormat(DataFormatString = "{0:#.####}")]
-        public decimal KPIInc { get; set; }
+        public decimal KpiInc { get; set; }
 
         
         [Display(Name = "Collection Incentive")]
@@ -124,13 +121,13 @@ namespace CS.Model
         public decimal PromRepInc { get; set; }
 
         
-        [Display(Name = "BG")]
+        [Display(Name = "Bg")]
         [DisplayFormat(DataFormatString = "{0:#.####}")]
-        public decimal BG { get; set; }
+        public decimal Bg { get; set; }
 
-        [Display(Name= "BGExp" )]
+        [Display(Name= "BgExp" )]
         [DisplayFormat(DataFormatString = "{0:#.####}")]
-        public decimal BGExp { get; set; }
+        public decimal BgExp { get; set; }
 
         public int IsCurrent { get; set; }
 

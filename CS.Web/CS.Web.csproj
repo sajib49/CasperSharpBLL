@@ -136,6 +136,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CBGController.cs" />
+    <Compile Include="Controllers\CustomerRoiController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -545,6 +546,11 @@
     <Content Include="Views\CBG\Edit.cshtml" />
     <Content Include="Views\CBG\Index.cshtml" />
     <Content Include="Views\Users\Cv_Saiduujaman_Sajib.pdf" />
+    <Content Include="Views\CustomerRoi\Create.cshtml" />
+    <Content Include="Views\CustomerRoi\Delete.cshtml" />
+    <Content Include="Views\CustomerRoi\Details.cshtml" />
+    <Content Include="Views\CustomerRoi\Edit.cshtml" />
+    <Content Include="Views\CustomerRoi\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
