@@ -16,14 +16,14 @@ namespace CS.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class TestRepot : ReportClass {
+    public class t : ReportClass {
         
-        public TestRepot() {
+        public t() {
         }
         
         public override string ResourceName {
             get {
-                return "TestRepot.rpt";
+                return "t.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CS.Report {
         
         public override string FullResourceName {
             get {
-                return "CS.Report.TestRepot.rpt";
+                return "CS.Report.t.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace CS.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedTestRepot : Component, ICachedReport {
+    public class Cachedt : Component, ICachedReport {
         
-        public CachedTestRepot() {
+        public Cachedt() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace CS.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            TestRepot rpt = new TestRepot();
+            t rpt = new t();
             rpt.Site = this.Site;
             return rpt;
         }

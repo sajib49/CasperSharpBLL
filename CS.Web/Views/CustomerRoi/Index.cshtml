@@ -7,8 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @*@Html.ActionLink("Create New", "Create")*@
-    <a id="btnGetAll" href="@Url.Action("Create", "CustomerRoi")" class="btn btn-success">
+   <a id="btnGetAll" href="@Url.Action("Create", "CustomerRoi")" class="btn btn-success">
         <i id="icon" class="glyphicon glyphicon-plus"></i> Add
     </a>
 </p>
@@ -142,16 +141,8 @@
                 <td style="text-align: right;">
                     @Html.DisplayFor(modelItem => item.Bg)
                 </td>
-                @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.TranId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.TranId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.TranId })
-                </td>*@
-                <td style="text-align: center;">
-                    @*@Html.ActionLink("Edit", "Edit", new { id = item.TranId }) |*@
-                    @*@Html.ActionLink("Details", "Details", new { id = item.TranId })*@
-                    @*@Html.ActionLink("Delete", "Delete", new { id=item.TranId })*@
-                    <a href="@Url.Action("Edit", "CustomerRoi", new {id = item.TranId})">
+               <td style="text-align: center;">
+                   <a href="@Url.Action("Edit", "CustomerRoi", new {id = item.TranId})">
                         <span class="glyphicon glyphicon-edit"></span>
                     </a>|
                     <a href="@Url.Action("Details", "CustomerRoi", new { id = item.TranId })">

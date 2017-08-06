@@ -44,30 +44,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rptCustomerRoiReport.cs">
+    <Compile Include="rptCustomerROIReport.cs" />
+    <Compile Include="rptCustomerROIReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptCustomerRoiReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
+      <DependentUpon>rptCustomerROIReport.rpt</DependentUpon>
     </Compile>
-    <Compile Include="TestRepot.cs">
+    <Compile Include="t.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TestRepot.rpt</DependentUpon>
+      <DependentUpon>t.rpt</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="rptCustomerRoiReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptCustomerRoiReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestRepot.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TestRepot.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="rptCustomerROIReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCustomerROIReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="t.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>t.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

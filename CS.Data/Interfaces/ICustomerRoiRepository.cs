@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using CS.Model;
+using CS.Model.ViewModels;
 
 namespace CS.Data.Interfaces
 {
     public interface ICustomerRoiRepository:IRepository<CustomerRoi>
     {
+        List<CustomerRoiDetails> GetCustomerRoiDetailse();
     }
 }

@@ -1,59 +1,5 @@
 ﻿@model CS.Model.User
 
-@*@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
-<body>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    
-    
-    @using (Html.BeginForm()) 
-    {
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>User</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-</body>
-</html>*@
-
 @{
     ViewBag.Title = "Login";
     Layout = null;
@@ -69,8 +15,7 @@
 </head>
 
 <body style="background-color: #46BFE7;">
-    <h2>Log In</h2>
-
+<h2>Log In</h2>
 
     @using (Html.BeginForm())
     {
@@ -106,38 +51,11 @@
                 </div>
             </div>
         </div>
-        
-          <button type="button" class="btn btn-info btn-lg" id="myBtn">Open Modal</button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-<h4 class="modal-title" id="myModalLabel">Invoice No: DMS-2017-0067</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-        </div>
-        <div class="modal-body" style="height: 500px;">
-            <iframe src=@Url.Action("ExportCustomers", "Users")  width="100%" height="100%">
-            
-            </iframe>
-        </div>
-        
-      </div>
-      
-    </div>
-  </div>
     }
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <script>
         $(document).ready(function () {
-            $("#myBtn").click(function () {
-                $("#myModal").modal();
-            });
             var loginfaildUserName = $("#lblLoginfaildUserName").text();
             var loginfaildUserPassword = $("#lblLoginfaildUserPassword").text();
 
