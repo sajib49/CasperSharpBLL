@@ -18,3 +18,13 @@ F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\bin\Debug\EntityFr
 F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.csprojResolveAssemblyReference.cache
 F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.dll
 F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.pdb
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\bin\Debug\CS.Model.dll.config
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\bin\Debug\CS.Model.dll
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\bin\Debug\CS.Model.pdb
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.dll
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.xml
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.csprojResolveAssemblyReference.cache
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.dll
+C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.pdb

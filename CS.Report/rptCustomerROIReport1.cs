@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CasperJetMVC.Report {
+namespace CS.Report {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace CasperJetMVC.Report {
         
         public override string FullResourceName {
             get {
-                return "CasperJetMVC.Report.rptCustomerROIReport.rpt";
+                return "CS.Report.rptCustomerROIReport.rpt";
             }
             set {
                 // Do nothing
