@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "CustomerRoi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CustomerRoi</h2>
+
+@*<iframe src="@Url.Action("CustomerRoi", "Report")" width="500" height="500">
+</iframe>*@
+<button type="button" class="btn btn-info btn-lg" id="myBtn">Open Modal</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Invoice No: DMS-2017-0067</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body" style="height: 500px;">
+                <object data="@Url.Action("CustomerRoi", "Report")" type="application/pdf" width="100%" height="100%">
+                    <p>
+                        Alternative text - include a link <a href="@Url.Action("CustomerRoi", "Report")">to the PDF!</a>
+                    </p>
+                </object>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+    $(document).ready(function () {
+        $("#myBtn").click(function () {
+            $("#myModal").modal();
+        });
+    });
+</script>
+}

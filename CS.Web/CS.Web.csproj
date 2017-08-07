@@ -550,7 +550,7 @@
     <Content Include="Views\CustomerRoi\Details.cshtml" />
     <Content Include="Views\CustomerRoi\Edit.cshtml" />
     <Content Include="Views\CustomerRoi\Index.cshtml" />
-    <Content Include="Views\Report\CustomerRoi.cshtml" />
+    <Content Include="Views\Report\CustomerRoiPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

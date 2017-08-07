@@ -3,3 +3,7 @@ F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Report\bin\Debug\CS.Repo
 F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Report\obj\Debug\CS.Report.csprojResolveAssemblyReference.cache
 F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Report\obj\Debug\CS.Report.dll
 F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Report\obj\Debug\CS.Report.pdb
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Report\bin\Debug\CS.Model.dll
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Report\bin\Debug\EntityFramework.dll
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Report\bin\Debug\CS.Model.pdb
+F:\ASP.NET\MVC\Official_Project\Final\CasperSharpBLL\CS.Report\bin\Debug\EntityFramework.xml

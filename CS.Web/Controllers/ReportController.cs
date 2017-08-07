@@ -11,6 +11,11 @@ namespace CS.Web.Controllers
 {
     public class ReportController : Controller
     {
+        public ActionResult CustomerRoiPage()
+        {
+            return View();
+        }
+
         public ActionResult CustomerRoi()
         {
             ReportDocument rd = new ReportDocument();
