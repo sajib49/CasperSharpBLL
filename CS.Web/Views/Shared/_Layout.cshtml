@@ -25,21 +25,35 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Cbg")</li>
-                    <li>@Html.ActionLink("Customer ROI", "Index", "CustomerRoi")</li>
-                    <li>@*@Html.ActionLink("Contact", "Contact", "Home")*@</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> </span><b>Customer</b> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Bank Guarantee", "Index", "Cbg")</li>
+                            <li>@Html.ActionLink("Customer ROI", "Index", "CustomerRoi")</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-file"> </span><b>Report</b> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @*<li>@Html.ActionLink("Bank Guarantee", "Index", "Cbg")</li>
+                            <li>@Html.ActionLink("Customer ROI", "Index", "CustomerRoi")</li>*@
+                        </ul>
+                    </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> </span><b> sajib@*@{ var user = Session["LoggedUser"] as User;}@user.UserName*@</b> <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> </span><b>@{ var user = Session["LoggedUser"] as User;}@user.UserName</b> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#"><b><span class="glyphicon glyphicon-lock"></span> Lock Screen</b></a></li>
                             <li><a href="#"><b><span class="glyphicon glyphicon-edit"></span> Change Password</b></a></li>
                             <li><a href="@Url.Action("LogOut","User")"><b><span class="glyphicon glyphicon-log-out"></span> Logout </b></a></li>
                         </ul>
                     </li>
-                    
+
                 </ul>
 
             </div>
