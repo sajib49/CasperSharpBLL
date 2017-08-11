@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using CrystalDecisions.Shared;
 using CS.Data.Interfaces;
 using CS.Data.Repositories;
 using CS.Model;
 using WebGrease.Css.Extensions;
+using CrystalDecisions.CrystalReports.Engine;
+using CS.Model.ViewModels;
 
 namespace CS.Web.Controllers
 {
@@ -14,6 +19,7 @@ namespace CS.Web.Controllers
     {
         private readonly ICustomerRoiRepository _customerRoiRepository = new CustomerRoiRepository();
         private readonly ICustomerRepository _customerRepository = new CustomerRepository();
+        private readonly IMarketGroupRepository _marketGroupRepository = new MarketGroupRepository();
 
         public ActionResult Index()
         {
@@ -65,7 +71,6 @@ namespace CS.Web.Controllers
             return View(customerroi);
         }
 
-        // GET: /CustRoi/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -134,6 +139,63 @@ namespace CS.Web.Controllers
             _customerRoiRepository.Delete(customerroi);
             _customerRoiRepository.Save();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult CustomerRoiReportFilter()
+        {
+            ViewBag.AreaList = new SelectList(_marketGroupRepository.FindAll(a=>
+                                 a.MarketGroupType ==1).OrderBy(a => a.MarketGroupDesc), 
+                                 "MarketGroupId", "MarketGroupDesc");
+            ViewBag.TerritoryList = new SelectList(_marketGroupRepository.FindAll(a =>
+                                a.MarketGroupType == 2).OrderBy(a => a.MarketGroupDesc),
+                                "MarketGroupId", "MarketGroupDesc");
+            ViewBag.CustomerList = new SelectList(_customerRepository.FindAll().
+                                OrderBy(a => a.CustomerName), "CustomerId",
+                                "CustomerName");
+
+
+            return View();
+        }
+
+        public ActionResult CustomerRoiReport(int nCustomerId,int nAreaId,int nTerritoryId,string sFromDate,string sTodate)
+        {
+            List<CustomerRoiDetails> oCustomerRoiDetails = new List<CustomerRoiDetails>()
+            {
+                new CustomerRoiDetails
+                {
+                    AreaName = "Dhaka",
+                    OthersInc = 2424,
+                    VehicleExp = 4235,
+                    StockInc = 435,
+                    CreditToMkt = 534
+                },
+                   new CustomerRoiDetails
+                {
+                    AreaName = "Rajshahi",
+                    OthersInc = 324,
+                    VehicleExp = 534,
+                    StockInc = 435345,
+                    CreditToMkt = 534
+                }
+
+            };
+
+            ReportDocument rptCustomerRoi = new ReportDocument();
+            //rptCustomerRoi.Load(Path.Combine(Server.MapPath("~/Reports"), "TestRepot.rpt")); //For Same Project
+            //rptCustomerRoi.SetDataSource(_customerRoiRepository.GetCustomerRoiDetailse());
+            string path = Path.GetFullPath(Path.Combine(Server.MapPath("~"), @"..\CS.Report/sajib.rpt"));  //For Diffrent Project
+            rptCustomerRoi.Load(path);
+            rptCustomerRoi.SetDataSource(oCustomerRoiDetails);
+            rptCustomerRoi.SetParameterValue("Country","Bangladesh");
+            //rptCustomerRoi.Load(Path.Combine(Server.MapPath("~/Reports"), "TestRepot.rpt"));
+           
+            Response.Buffer = false;
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Stream stream = rptCustomerRoi.ExportToStream(ExportFormatType.PortableDocFormat);
+            stream.Seek(0, SeekOrigin.Begin);
+            //return File(stream, "application/pdf","file_name"); // For Direct download
+            return new FileStreamResult(stream, "application/pdf"); //For Direct View
         }
 
 

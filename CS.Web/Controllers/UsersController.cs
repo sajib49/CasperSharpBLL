@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.Web.Mvc;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
+﻿using System.Web.Mvc;
 using CS.Model;
 using CS.Data.Interfaces;
 using CS.Data.Repositories;

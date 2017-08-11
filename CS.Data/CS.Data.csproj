@@ -100,6 +100,8 @@
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\CustomerRoiRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Interfaces\IMarketGroupRepository.cs" />
+    <Compile Include="Repositories\MarketGroupRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

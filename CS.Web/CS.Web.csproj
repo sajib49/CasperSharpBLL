@@ -137,7 +137,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CBGController.cs" />
     <Compile Include="Controllers\CustomerRoiController.cs" />
-    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -550,7 +549,7 @@
     <Content Include="Views\CustomerRoi\Details.cshtml" />
     <Content Include="Views\CustomerRoi\Edit.cshtml" />
     <Content Include="Views\CustomerRoi\Index.cshtml" />
-    <Content Include="Views\Report\CustomerRoiPage.cshtml" />
+    <Content Include="Views\CustomerRoi\CustomerRoiReportFilter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

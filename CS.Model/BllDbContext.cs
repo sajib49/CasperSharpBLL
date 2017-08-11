@@ -19,12 +19,12 @@ namespace CS.Model
         {
             this.Configuration.ProxyCreationEnabled = false;
         }
-        //public DbSet<BllBitSales> BitSales { get; set; }
         public DbSet<CustomerBankGuarantee> CustomerBankGuarantees { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<CustomerRoi> CustomerRois { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<MarketGroup> MarketGroups { get; set; } 
 
     }
 }

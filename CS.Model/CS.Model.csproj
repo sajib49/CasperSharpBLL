@@ -60,6 +60,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerBankGuarantee.cs" />
     <Compile Include="CustomerRoi.cs" />
+    <Compile Include="MarketGroup.cs" />
     <Compile Include="PdsaHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />

@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Cutomer Roi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cutomer Roi</h2>
+
+
+@Html.DropDownList("CustomerList", null, "--Select Customer--", htmlAttributes: new { @class = "form-control" })
+@Html.DropDownList("TerritoryList", null, "--Select Area--", htmlAttributes: new { @class = "form-control" })
+@Html.DropDownList("AreaList", null, "--Select Territory--", htmlAttributes: new { @class = "form-control" })
+
+<div class='input-group date' data-provide="datepicker" id='datepicker1'>
+    <input type="text" class="form-control" autocomplete="off" placeholder="dd-mm-yyyy" />
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar">
+        </span>
+    </span>
+</div>
+
+<div class='input-group date' data-provide="datepicker" id='datepicker2'>
+    <input type="text" class="form-control" autocomplete="off" placeholder="dd-mm-yyyy" />
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar">
+        </span>
+    </span>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Invoice No: DMS-2017-0067</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="width:700px ;height: 500px;">
+                @*<object data="@Url.Action("CustomerRoiReport","CustomerRoi")" type="application/pdf" width="100%" height="100%">
+                        <p>Alternative text - include a link <a href="@Url.Action("CustomerRoiReport","CustomerRoi")">to the PDF!</a></p>
+                    </object>*@
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="@Url.Action("CustomerRoiReport", "CustomerRoi")" class="embed-responsive-item"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<button class="btn  btn-primary" id="myBtn">
+    <span class="glyphicon glyphicon-eye-open"></span> Preview
+</button>
+<a href="@Url.Action("CustomerRoiReport","CustomerRoi",new{nCustomerId=-1,nAreaId=-1,nTerritoryId=-1,sFromDate ="",sTodate=""})" target="_blank">to the PDF!</a>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#myBtn").click(function () {
+                $("#myModal").modal();
+            });
+        });
+    </script>
+}
