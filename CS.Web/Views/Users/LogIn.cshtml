@@ -27,7 +27,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.UserName, new {@class = "control-label col-md-2"})
                 <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.UserName, new {required = "", @class = "form-control", autocomplete = "off", placeholder = "User Name"})
+                    @Html.TextBoxFor(model => model.UserName, new {@class = "form-control", autocomplete = "off", placeholder = "User Name"})
                     @Html.ValidationMessageFor(model => model.UserName)
                     @Html.ValidationMessage("LoginFaild", new {id = "lblLoginfaildUserName", @class = "text-danger"})
                 </div>
@@ -36,7 +36,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Password, new {@class = "control-label col-md-2"})
                 <div class="col-md-10">
-                    @Html.PasswordFor(model => model.Password, new {required = "", @class = "form-control", autocomplete = "off", placeholder = "Password"})
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", autocomplete = "off", placeholder = "Password"})
                     @Html.ValidationMessageFor(model => model.Password)
                     @Html.ValidationMessage("LoginFaild", new {id = "lblLoginfaildUserPassword", @class = "text-danger"})
                 </div>
@@ -54,6 +54,7 @@
     }
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
             var loginfaildUserName = $("#lblLoginfaildUserName").text();

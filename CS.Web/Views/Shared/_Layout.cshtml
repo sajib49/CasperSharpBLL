@@ -39,7 +39,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-file"> </span><b>Report</b> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Customer Roi", "CustomerRoiReportFilter", "CustomerRoi")</li>
-                            
+
                         </ul>
                     </li>
                 </ul>
@@ -69,6 +69,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
     <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
     @RenderSection("scripts", required: false)

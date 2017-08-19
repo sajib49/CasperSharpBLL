@@ -28,3 +28,13 @@ C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.SqlSer
 C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.csprojResolveAssemblyReference.cache
 C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.dll
 C:\Users\ssajib\Desktop\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.pdb
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\bin\Debug\CS.Model.dll.config
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\bin\Debug\CS.Model.dll
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\bin\Debug\CS.Model.pdb
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.dll
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.xml
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.csprojResolveAssemblyReference.cache
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.dll
+C:\Users\Saidujjaman\Desktop\New folder\CasperSharpBLL\CS.Model\obj\Debug\CS.Model.pdb
