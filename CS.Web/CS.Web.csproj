@@ -542,10 +542,7 @@
     <Content Include="Views\CustomerRoi\Details.cshtml" />
     <Content Include="Views\CustomerRoi\Edit.cshtml" />
     <Content Include="Views\CustomerRoi\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\CustomerRoi\CustomerRoiReportFilter.cshtml" />
-=======
->>>>>>> ec462785275072f42fd89d402284f5c602bcd6a0
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

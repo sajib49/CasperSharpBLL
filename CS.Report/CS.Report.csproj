@@ -54,14 +54,13 @@
       <DependentUpon>rptCustomerROIReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-<<<<<<< HEAD
+
     <Compile Include="sajib.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sajib.rpt</DependentUpon>
     </Compile>
-=======
->>>>>>> ec462785275072f42fd89d402284f5c602bcd6a0
+
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
@@ -71,13 +70,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCustomerROIReport1.cs</LastGenOutput>
     </EmbeddedResource>
-<<<<<<< HEAD
+
     <EmbeddedResource Include="sajib.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>sajib.cs</LastGenOutput>
     </EmbeddedResource>
-=======
->>>>>>> ec462785275072f42fd89d402284f5c602bcd6a0
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CS.Model\CS.Model.csproj">
