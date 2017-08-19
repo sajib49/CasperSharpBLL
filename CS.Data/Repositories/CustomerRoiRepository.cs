@@ -52,7 +52,7 @@ namespace CS.Data.Repositories
                                     Maintenance ,OthersExp ,BGExp,TotalExpense, StockInc , CreditToMKT , PromRepInc ,BG,TotalInvestment, Income
                                     ) as Roi 
                                     inner join (Select AreaName, TerritoryName, CustomerCode, CustomerName, CustomerID from v_customerdetails) as Cust on Roi.CustomerID=Cust.CustomerID";
-
+            //Where Cust.CustomerID = 1 and AreaID = 4 And TerritoryID =4 and ExpMonth = ''
             return _db.Database.SqlQuery<CustomerRoiDetails>(sCustRoiDetail).ToList();
         }
     }
